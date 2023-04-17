@@ -1,5 +1,6 @@
 sum_n = 0
 
+#Perfect number
 def getSumDivisors(num, i):
     global sum_n
     # since, all factors can be found will num/2
