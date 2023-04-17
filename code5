@@ -1,0 +1,29 @@
+n = 28
+sump = 0
+
+for i in range(1, int(pow(n, 0.5))):
+    if n % i == 0:
+
+        # For n : (1, n) will always be pair of divisor
+        # acc to def., we must ignore adding num itself as divisor
+        # when calculating for perfect number
+        if i == 1:
+            sump += i
+
+        # Example For 100 (10,10)  will be one pair
+        # But, we should add value to the sum just once
+        elif i == n / i:
+            sump += i
+
+        # add both pairs as divisors
+        # For any divisor i, n/i will also be a divisor
+        else:
+            sump += i + n / i
+
+if sump == n:
+    print("The number is a Perfect number")
+else:
+    print("The number is not a Perfect number")
+
+# Time complexity: O(sqrt(N))
+# Space complexity: O(1)
